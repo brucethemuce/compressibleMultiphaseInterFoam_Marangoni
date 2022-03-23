@@ -1,0 +1,46 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  9
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       volScalarField;
+    object      p_rgh;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+              // kg m s
+dimensions      [1 -1 -2 0 0 0 0]; // Pascals
+
+internalField   uniform 101325; //either 0 or 101325, pref is in fvSolution
+
+boundaryField
+{
+  bottom
+  {
+    type            calculated;
+    value           $internalField;
+  }
+  top
+  {
+    type            calculated;
+    value           $internalField;
+  }
+
+  sym{type empty;}
+
+  left
+  {
+    type            calculated;
+    value           $internalField;
+      }
+  right
+  {
+    type            calculated;
+    value           $internalField;
+     }
+}
+// ************************************************************************* //

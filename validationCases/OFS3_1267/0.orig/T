@@ -1,0 +1,37 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      T;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions          [0 0 0 1 0 0 0];
+
+internalField       uniform 299.5;
+
+boundaryField
+{
+  bottom
+  {
+      type            zeroGradient; //insulated
+  }
+  top
+  {
+      type            zeroGradient;
+  }
+
+  sym{type empty;}
+
+  left
+  {
+    type            fixedValue;
+    value           uniform 299;
+      }
+  right
+  {
+    type            fixedValue;
+    value           uniform 300;
+     }
+}
