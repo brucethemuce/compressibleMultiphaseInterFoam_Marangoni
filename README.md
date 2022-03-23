@@ -8,4 +8,4 @@ GPL-3.0-only
 Future Work
 
 1. multispecies effects
-2. fold into the openFOAM extension from DLR, TwoPhaseFlow. Includes mass transfer, CHT, and more
+2. fold into the openFOAM extension from DLR, TwoPhaseFlow, which includes mass transfer, CHT, and more
